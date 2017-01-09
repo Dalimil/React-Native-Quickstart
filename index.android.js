@@ -9,24 +9,45 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  TextInput,
+  View,
+  ScrollView,
+  Image
 } from 'react-native';
 
 export default class Quickstart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={{ backgroundColor: '#F5FCFF' }}>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
+          To get started, edit index.android.js,{'\n'}
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
-      </View>
+        <View style={{ justifyContent: 'space-around', flexDirection: 'row' }}>
+          <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+          <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+          <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+        </View>
+
+        <TextInput
+          style={{height: 50}}
+          placeholder="Type input here."
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text>
+          { this.state.text.toUpperCase().split("").join("_") }
+        </Text>
+        <Image source={require('./assets/logo.png')} style={{ width: 200, height: 200, resizeMode: 'contain' }}/>
+      </ScrollView>
     );
   }
 }
@@ -34,9 +55,8 @@ export default class Quickstart extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch'
   },
   welcome: {
     fontSize: 20,
