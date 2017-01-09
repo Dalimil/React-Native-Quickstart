@@ -2919,6 +2919,10 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-native-keep-awake@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-keep-awake/-/react-native-keep-awake-1.0.7.tgz#4ca2deb2448d1dbfec375d97e1299559a350d81f"
+
 react-native@0.40.0:
   version "0.40.0"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.40.0.tgz#ca7b86a8e8fbc7653634ad47ca2ffd69fdf18ad5"

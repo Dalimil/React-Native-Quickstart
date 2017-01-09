@@ -15,10 +15,20 @@ import {
   Image
 } from 'react-native';
 
+import KeepAwake from 'react-native-keep-awake';
+
 export default class Quickstart extends Component {
   constructor(props) {
     super(props);
     this.state = {text: ''};
+  }
+
+  componentDidMount() {
+    KeepAwake.activate();
+  }
+
+  componentWillUnmount() {
+    KeepAwake.deactivate();
   }
 
   render() {
