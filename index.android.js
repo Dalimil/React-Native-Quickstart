@@ -23,6 +23,16 @@ export default class Quickstart extends Component {
     this.state = {text: ''};
   }
 
+  getUserInfo() {
+  	// Fetch usage example
+  	return fetch('https://api.github.com/users/octocat')
+	  	.then(response => response.json()) // or text() or blob()
+	  	.then(data => {
+	  		console.log(data);
+	  		return data["avatar_url"];
+	  	});
+  }
+
   componentDidMount() {
     KeepAwake.activate();
   }
