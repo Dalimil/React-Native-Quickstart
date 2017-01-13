@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 
 import KeepAwake from 'react-native-keep-awake';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 export default class Quickstart extends Component {
   constructor(props) {
@@ -48,6 +49,12 @@ export default class Quickstart extends Component {
 
   render() {
     return (
+      <ScrollableTabView>
+        <View tabLabel="React" />
+        <View tabLabel="Flow" />
+        <View tabLabel="Jest" />
+      </ScrollableTabView>
+      /*
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Shake or press menu button for dev menu
@@ -86,7 +93,7 @@ export default class Quickstart extends Component {
           <Text>Let's scroll this{'\n'}{'\n'}</Text>
           <Text>Let's scroll this</Text>
         </ScrollView>
-      </View>
+      </View>*/
     );
   }
 }

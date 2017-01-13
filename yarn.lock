@@ -2923,6 +2923,12 @@ react-native-keep-awake@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-native-keep-awake/-/react-native-keep-awake-1.0.7.tgz#4ca2deb2448d1dbfec375d97e1299559a350d81f"
 
+react-native-scrollable-tab-view@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-scrollable-tab-view/-/react-native-scrollable-tab-view-0.7.0.tgz#c8fe713530766f8fe9364155a5445a5964a99f77"
+  dependencies:
+    react-timer-mixin "^0.13.3"
+
 react-native@0.40.0:
   version "0.40.0"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.40.0.tgz#ca7b86a8e8fbc7653634ad47ca2ffd69fdf18ad5"
@@ -3018,7 +3024,7 @@ react-test-renderer@~15.4.0-rc.4:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-timer-mixin@^0.13.2:
+react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.3.tgz#0da8b9f807ec07dc3e854d082c737c65605b3d22"
 
