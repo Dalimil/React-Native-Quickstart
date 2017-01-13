@@ -12,7 +12,8 @@ import {
   TextInput,
   View,
   ScrollView,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 
 import KeepAwake from 'react-native-keep-awake';
@@ -41,22 +42,24 @@ export default class Quickstart extends Component {
     KeepAwake.deactivate();
   }
 
+  onPressButton() {
+    console.log("react-native log-android 'message'");
+  }
+
   render() {
     return (
-      <ScrollView style={{ backgroundColor: '#F5FCFF' }}>
+      <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js,{'\n'}
-          Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
-        <View style={{ justifyContent: 'space-around', flexDirection: 'row' }}>
-          <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-          <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-          <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
-        </View>
+
+        <TouchableHighlight onPress={this.onPressButton}>
+          <View style={{ justifyContent: 'space-around', flexDirection: 'row' }}>
+            <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+            <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+            <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+          </View>
+        </TouchableHighlight>
 
         <TextInput
           style={{height: 50}}
@@ -66,8 +69,24 @@ export default class Quickstart extends Component {
         <Text>
           { this.state.text.toUpperCase().split("").join("_") }
         </Text>
-        <Image source={require('./assets/logo.png')} style={{ width: 200, height: 200, resizeMode: 'contain' }}/>
-      </ScrollView>
+
+        <Image source={require('./assets/logo.png')}
+          style={{ flex: 1, width: undefined, height: undefined, resizeMode: "contain" }}>
+          <Text style={{ textAlign: "center", color: "#fff", marginTop: 30 }}>
+            Text over image
+          </Text>
+        </Image>
+        
+        <ScrollView>
+          <Text>Let's scroll this{'\n'}{'\n'}</Text>
+          <Text>Let's scroll this{'\n'}{'\n'}</Text>
+          <Text>Let's scroll this{'\n'}{'\n'}</Text>
+          <Text>Let's scroll this{'\n'}{'\n'}</Text>
+          <Text>Let's scroll this{'\n'}{'\n'}</Text>
+          <Text>Let's scroll this{'\n'}{'\n'}</Text>
+          <Text>Let's scroll this</Text>
+        </ScrollView>
+      </View>
     );
   }
 }
@@ -76,18 +95,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 15,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    color: '#333333'
+  }
 });
 
 AppRegistry.registerComponent('Quickstart', () => Quickstart);
