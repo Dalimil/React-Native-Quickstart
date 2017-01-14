@@ -4,6 +4,7 @@ import KeepAwake from 'react-native-keep-awake';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
 import Home from './routes/Home';
+import Profile from './routes/Profile';
 import styles from './config/styles';
 
 export default class App extends Component {
@@ -21,7 +22,7 @@ export default class App extends Component {
       /* https://github.com/skv-headless/react-native-scrollable-tab-view */
       <ScrollableTabView tabBarUnderlineStyle={{ backgroundColor: styles.color.accent}}>
         <Home tabLabel="Home" />
-        <View tabLabel="Profile" />
+        <Profile tabLabel="Profile" />
         <View tabLabel="Tab 3" />
       </ScrollableTabView>
     );
